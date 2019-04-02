@@ -1,0 +1,44 @@
+{
+  "name": "netology-ajs-lection_4-task_1",
+  "version": "1.0.0",
+  "description": "Code for task 1 of lesson 4 in AJS course at Netology",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "webpack-dev-server --mode development",
+    "lint": "eslint .",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/extrin/netology-ajs-lection_4-task_1.git"
+  },
+  "keywords": [
+    "netology",
+    "ajs"
+  ],
+  "author": "extrin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/extrin/netology-ajs-lection_4-task_1/issues"
+  },
+  "homepage": "https://github.com/extrin/netology-ajs-lection_4-task_1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-jest": "^24.6.0",
+    "babel-loader": "^8.0.5",
+    "core-js": "^2.6.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.6.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.0"
+  }
+}
