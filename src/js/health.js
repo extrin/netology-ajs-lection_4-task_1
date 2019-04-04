@@ -1,10 +1,16 @@
 import { isObject, isNumber } from '../utils/checkers';
+import UserException from '../utils/exceptions';
 
-export default (get_health_level = (unit) => {
-  if (!isObject(unit)) throw 'Input is not a unit';
-  if (!unit.hasOwnProperty('name')) throw 'Unit does not have a name';
-  if (!unit.hasOwnProperty('health')) throw "Unit's health is undefined";
-  if (!isNumber(unit.health)) throw "Unit's health is not a number";
+const getHealthLevel = (unit) => {
+  if (unit === null || unit === undefined) throw new UserException('Input is null or undefined');
+  if (!isObject(unit)) throw new UserException('Input is not a unit');
+  if (!('name' in unit)) throw new UserException('Unit does not have a name');
+  if (!('health' in unit)) throw new UserException("Unit's health is undefined");
+  if (!isNumber(unit.health)) throw new UserException("Unit's health is not a number");
 
-  return unit.health < 15 ? 'critical' : unit.health <= 50 ? 'wounded' : 'healthy';
-});
+  if (unit.health < 15) return 'critical';
+  if (unit.health <= 50) return 'wounded';
+  return 'healthy';
+};
+
+export default getHealthLevel;
